@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillCraft Task 01 - Responsive Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Fixed Navigation Bar -->
+    <header id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Nova<span>Studio</span></a>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-item active">Home</a></li>
+                    <li><a href="#features" class="nav-item">Features</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="content">
+            <h1>Build Modern Digital Experiences</h1>
+            <p>Scroll down to see the fixed navigation menu adapt dynamically, or hover over any link to preview
+                interactive transitions.</p>
+            <a href="#features" class="cta-btn">Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section alt-bg">
+        <div class="content">
+            <h2>Core Features</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Fixed Positioning</h3>
+                    <p>Stays pinned at the top of the viewport across every section of the page.</p>
+                </div>
+                <div class="card">
+                    <h3>Scroll Detection</h3>
+                    <p>JavaScript listens for scroll offset changes and swaps the header theme seamlessly.</p>
+                </div>
+                <div class="card">
+                    <h3>Responsive Layout</h3>
+                    <p>Adapts cleanly from widescreen monitors down to mobile phones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="content">
+            <h2>About This Project</h2>
+            <p>Created as Task 01 for the SkillCraft Technology Web Development Internship using semantic HTML5, modern
+                CSS3, and vanilla JavaScript.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section alt-bg">
+        <div class="content">
+            <h2>Get In Touch</h2>
+            <p>Have a project in mind? Reach out at <strong>hello@novastudio.dev</strong></p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

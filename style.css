@@ -1,0 +1,230 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Fixed Navigation Menu (Initial State) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: transparent;
+    transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled State (Toggled via JavaScript) */
+.navbar.scrolled {
+    background-color: #0f172a;
+    padding: 14px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+/* Navigation Links & Hover Effects */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-item {
+    position: relative;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 4px;
+    transition: color 0.3s ease;
+}
+
+/* Animated Underline on Hover */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #38bdf8;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Change hover accent color when navbar is scrolled */
+.navbar.scrolled .nav-item:hover {
+    color: #fbbf24;
+}
+
+.navbar.scrolled .nav-item::after {
+    background-color: #fbbf24;
+}
+
+/* Page Sections */
+.section {
+    min-height: 100vh;
+    padding: 120px 24px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+}
+
+.alt-bg {
+    background-color: #f1f5f9;
+}
+
+.content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 28px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-2px);
+}
+
+/* Feature Cards Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+/* Hamburger Button (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .nav-links.open {
+        max-height: 260px;
+        padding: 12px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
